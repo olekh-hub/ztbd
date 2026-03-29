@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # 1. PostgreSQL
+  postgres:
+    image: postgres:15
+    container_name: ztb_postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ecommerce_db
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  # 2. MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: ztb_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: ecommerce_db
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+
+  # 3. MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: ztb_mongodb
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+
+  # 4. Redis
+  redis:
+    image: redis:latest
+    container_name: ztb_redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
