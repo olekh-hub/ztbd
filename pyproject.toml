@@ -1,0 +1,45 @@
+[project]
+name = "ztbd"
+version = "0.1.0"
+description = "Data generation and import scripts for the ZTBD ecommerce database project."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "faker",
+    "matplotlib",
+    "mysql-connector-python",
+    "pandas",
+    "psycopg[binary]",
+    "pymongo",
+    "redis",
+]
+
+[project.scripts]
+ztbd = "ztbd.cli:main"
+ztbd-benchmark = "benchmarks.runner:main"
+ztbd-report = "benchmarks.report:main"
+ztbd-plots = "benchmarks.plots:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[tool.uv]
+package = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ztbd", "benchmarks"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: tests that require running database services",
+]

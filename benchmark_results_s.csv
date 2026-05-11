@@ -1,0 +1,16 @@
+scenario_id,db,size,variant,run_no,status,duration_ms,rows_affected,plan_hash,error_type,error_message
+smoke,mysql,s,no_idx,1,ok,0.804,1,,,
+smoke,mysql,s,no_idx,2,ok,0.583,1,,,
+smoke,mysql,s,no_idx,3,ok,0.570,1,,,
+r1,mysql,s,no_idx,1,ok,248.949,1,117e3baf57fc,,
+r1,mysql,s,no_idx,1,failed,,,,OSError,[Errno 30] Read-only file system: '/explain_plans'
+r1,mysql,s,no_idx,2,ok,32.608,1,34cf719aebb1,,
+r1,mysql,s,no_idx,2,failed,,,,OSError,[Errno 30] Read-only file system: '/explain_plans'
+r1,mysql,s,no_idx,3,ok,30.664,1,f1b9e4d5ec31,,
+r1,mysql,s,no_idx,3,failed,,,,OSError,[Errno 30] Read-only file system: '/explain_plans'
+r2,mysql,s,no_idx,1,ok,3756.010,608703,2157a7c87a39,,
+r2,mysql,s,no_idx,1,failed,,,,OSError,[Errno 30] Read-only file system: '/explain_plans'
+r2,mysql,s,no_idx,2,ok,2995.180,608703,12dc5e99f4c7,,
+r2,mysql,s,no_idx,2,failed,,,,OSError,[Errno 30] Read-only file system: '/explain_plans'
+r2,mysql,s,no_idx,3,ok,3042.666,608703,3104755f4960,,
+r2,mysql,s,no_idx,3,failed,,,,OSError,[Errno 30] Read-only file system: '/explain_plans'
